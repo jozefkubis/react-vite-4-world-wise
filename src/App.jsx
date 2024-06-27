@@ -9,6 +9,7 @@ import AppLayout from "./pages/AppLayout"
 import PageNotFound from "./pages/PageNotFound"
 import CitiyList from "./components/CityList"
 import CountryList from "./components/CountryList"
+import City from "./components/City"
 
 const BASE_URL = "http://localhost:3500"
 
@@ -39,8 +40,8 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/app" element={<AppLayout />}>
+        <Route path="login" element={<Login />} />
+        <Route path="app" element={<AppLayout />}>
           <Route
             index
             element={<CitiyList cities={cities} isLoading={isLoading} />}
@@ -49,6 +50,7 @@ function App() {
             path="cities"
             element={<CitiyList cities={cities} isLoading={isLoading} />}
           />
+          <Route path="cities/:id" element={<City />} />
           <Route
             path="countries"
             element={<CountryList cities={cities} isLoading={isLoading} />}
