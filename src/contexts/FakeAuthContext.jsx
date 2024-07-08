@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react"
+import { createContext, useContext, useReducer } from "react"
 
 const AuthContext = createContext()
 
@@ -53,6 +53,7 @@ function useAuth() {
   if (context === undefined) {
     throw new Error("useAuth must be used within an AuthProvider")
   }
+  return context
 }
 
 export { AuthProvider, useAuth }
